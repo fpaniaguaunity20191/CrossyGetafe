@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camion2 : MonoBehaviour {
+public class Camion2 : Camion {
     public Transform startPoint;
     public Transform endPoint;
     public float speed;

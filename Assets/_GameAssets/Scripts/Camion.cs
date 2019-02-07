@@ -3,22 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Camion : MonoBehaviour {
-    public Transform origin;
-    public float speed;
-    private void Awake()
-    {
-        transform.position = origin.position;
-    }
-    private void Start()
-    {
-        
-    }
-    void Update () {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-    }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        transform.position = origin.position;
+        if (collision.gameObject.name == "Pollo")
+        {
+            Camera.main.transform.SetParent(null);
+            Destroy(collision.gameObject);
+        }
     }
 }
